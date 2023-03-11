@@ -181,3 +181,108 @@ ivec2Q 
 #version 300 es
 
 #define HLSLCC_ENABLE_UNIFORM_BUFFERS 1
+#if$ J TUNITY o
+#else û  uniform
+#endif% …SUPPORTSh ƒLOCATION & N  ð(x) layout(locatK= x)/ wBINDING. pbinding- ž, std140)Ý 
+j U H ÿ 	vec4 hlslcc_mtx4x4unity_ObjectToWorld[4];3 MatrixVP. ‘in highp . pin_POSI­ 0 fmedium ºCOLOR0;
+out %vs  ju_xlat ô1;
+void main()
+{
+   ) ) =} .yyyy *ò ;1];G 3 J0] *m fxxxx +´ Q 2Q OzzzzQ 
+ +[ 3ß 1= !à1= . 	^ 	1G 2G 	G sgl_PosihK 	3K LwwwwK u( =  ¥return;
+}
+LöŽFRAGMENTøQpreci mfloat; >intÿL=0) 0¯SV_Target0 ( =\ Ú 	Üð  t“$Globals€$ O   m 0  D  ‹
+› , @4 ˆ , C   ¬ðINGLE_PASS_STEREO$ /ª	¤ÿÎ—
+| $0)v  US cStereo×% {	
+© > Ì_P[8];9 !V9 %?Inv< &V¯  CameraPro…?ionB %?InvE )ýTL „ %D? -3 q SSpaceOos[2w 8 ßScaleOffset[2¬'};dØ1ØEyeIndexÙ9int³ 1 ­ û	N§ 
+ )i1 2	
+ÿ.!i1'/t(h << 2)/ 28
+i(k \+ 1)]P A @ X
+2T • /2)k
+2k
+^ /3)~
+2~
+ú$  €
+€
+@ 
+€
+  4
+
+ûµ  @  
+   T þ€
+0K  < 4 4 ( Ä 	N
+Ä ”0 V0  ¨0 < d O  d Pd K  0 *h l  Ø N  ¨ Ü 8 	8 &€|_ , 8I  Ø ”0 | X ,
+	 œ 
+à_INSTANCING_ON  /o
+(
+
+a#exten ÿGL_AMD_vertex_shader_layer : requireX
+ÿÿÿÿŠ«@Aflat	Y u­`vs_BLEQDICES& 6oat¿uÓuÜ	áý3ïd ([ ÿ(gl_InstanceID))0\* 0.5 SfractÂ
+/0)kŒŸroundEvenC uD /ina #i3! >u0)ˆ1Ý
+31Ý
+0ÔÝ
+,1©1Ý
+®
+1®
+3®
+,t1®
+63®
+1®
+:3®
+1®
+÷' =äš L*	)= âí
+àì
+ì
+ÿÿ†˜
+t
+	t
+“MULTIVIEWs
+/ ~t
+îOVR_multiview2k
+ÃÿÿÿÿÎ>iceÛ¶ 4 µ Ö@num_hŸs = 2) inà$B56mWEIGHT4ÿQJ`ViewID‚)ÿqH	œ
+ƒ
+D/ =	€
+?].xpÿÿÿ„ô Ì0 p	% x„ 	| ì(+` 1 \ 1P                             _Color     Color                 €?  €?  €?  €?       	   _SrcBlend      SrcBlend              @                   	   _DstBlend      DstBlend              A                      _ZWrite    ZWrite               €?                      _ZTest     ZTest                €@                      _Cull      Cull                                     _ZBias     ZBias                                                 $Globals       STEREO_INSTANCING_ON      STEREO_MULTIVIEW_ON       UNITY_SINGLE_PASS_STEREO      UnityStereoEyeIndex       UnityStereoEyeIndices         UnityStereoGlobals        _Color        unity_MatrixVP        unity_ObjectToWorld       unity_StereoCameraInvProjection       unity_StereoCameraProjection
+      unity_StereoCameraToWorld         unity_StereoEyeIndex      unity_StereoEyeIndices        unity_StereoMatrixInvV        unity_StereoMatrixP 	      unity_StereoMatrixV 
+      unity_StereoMatrixVP      unity_StereoScaleOffset       unity_StereoWorldSpaceCameraPos       unity_StereoWorldToCamera                  	   _SrcBlend       	   _DstBlend       	   _SrcBlend       	   _DstBlend       	   <noninit>       	   <noninit>     pA	   <noninit>     €?	   <noninit>       	   <noninit>     €?	   <noninit>       	   <noninit>       	   <noninit>       	   <noninit>     pA	   <noninit>     €?	   <noninit>       	   <noninit>     €?	   <noninit>       	   <noninit>       	   <noninit>       	   <noninit>     pA	   <noninit>     €?	   <noninit>       	   <noninit>     €?	   <noninit>       	   <noninit>       	   <noninit>       	   <noninit>     pA	   <noninit>     €?	   <noninit>       	   <noninit>     €?	   <noninit>       	   <noninit>       	   <noninit>       	   <noninit>     pA	   <noninit>     €?	   <noninit>       	   <noninit>     €?	   <noninit>       	   <noninit>       	   <noninit>       	   <noninit>     pA	   <noninit>     €?	   <noninit>       	   <noninit>     €?	   <noninit>       	   <noninit>       	   <noninit>       	   <noninit>     pA	   <noninit>     €?	   <noninit>       	   <noninit>     €?	   <noninit>       	   <noninit>       	   <noninit>       	   <noninit>     pA	   <noninit>         €?	   <noninit>          _ZTest         _ZWrite        _Cull          _ZBias         _ZBias      	   <noninit>       	   <noninit>       	   <noninit>       	   <noninit>      A	   <noninit>       	   <noninit>       	   <noninit>       	   <noninit>      A	   <noninit>       	   <noninit>       	   <noninit>       	   <noninit>      A	   <noninit>     C	   <noninit>     C	   <noninit>       	   <noninit>          unity_FogStart         unity_FogEnd       unity_FogDensity    	   <noninit>       	   <noninit>       	   <noninit>       	   <noninit>      unity_FogColor  ÿÿÿÿéH        IGNOREPROJECTOR    true   QUEUE      Transparent 
+   RenderType     Transparent                       	                                                        	                                                        @                €                                       	                                                         	                                                             @              P         	             
+   €                        €        
+               €                       €                                       @                                                                  	                                                             @              P         	             
+   €                        €        
+               €                       €                                       @                    ë         	                                                             @              P         	             
+   €                        €        
+               €                       €                                       @                                                         ë                                                                                                                                                                                                                                                                                                ë                                                         ë                                            IGNOREPROJECTOR    true   QUEUE      Transparent 
+   RenderType     Transparent        Hidden/Internal-Colored                       	                ½        ½     —        p
+     d2  T  ±   4     bD  ˆ RÌ  D c 
+  ` o<Q  ÿCÉ  #ifdef VERTEX
+#version 100
+
+uniform 	vec4 hlslcc_mtx4x4unity_ObjectToWorld[4];3 MatrixVP.  ñ	_Color;
+attribute highp  Ïin_POSITION0# óCOLOR0;
+varying medium  &vs    ju_xlat ô1;
+void main()
+{
+   ) & =c % *¯  " [ & =W 
+; Á .yyyy *S,1]G 3 J0] *m nxxxx +˜ Q 2Q OzzzzQ 
+ +[ 3ß 1= !A1= . 	^ 	1G 2G 	G €gl_PositEK 3K LwwwwK óreturn;
+}
+
+#endif
+­‹FRAGMENT¯ 4GL_! ñ _PRECISION_HIGHV Qpreci5 ;Ëfloat;
+#else! ># … A ?intqð#define SV_Target0*¿FragData[0]w , =L C   	Øð
+ 0 ð
+   UNITY_SINGLE_PASS_STEREO$ /%,_eStereo184 Hint & EyeIndexUv¡ 
+ )i1 2 pop_shl(  a,ES b) {Ù  q(floor(}â(a) * pow(2.0,‘õ (b)))); }
+ivec2Q 
+  S 	 U Ta.x =! èa.x, b.x); a.y y 4y);… a] 3] 3] 3] #8a.z z zu  4u 4u 4u ;8a.w w w ÿh&i1íH, 2)0 2BW(l \+ 1)]P A @ b2T • /2)u2u^ /3)ˆ2ˆÿ] ÌC` P     ±   d   à  bD  „
+ SÈ  à b¨"  ` R1  D c L1  ` S¬1  \ &2 o<Q  ÿ?  #ifdef VERTEX
+#version 300 es
+
+#define HLSLCC_ENABLE_UNIFORM_BUFFERS 1
+#if$ J TUNITY o
+#else û  uniform
+#endif% …SUPPORTSh ƒLOCATION & N  ð(x) layout(locatK= x)/ wBINDING. pbinding- ž, std140)Ý 
+j U H ÿ 	vec4 hlslcc_mtx4x4unity_ObjectToWorld[4];3 MatrixVP.  ñ_Color;
+in highp  pin_POSIÃ 0  óCOLOR0;
+out medium %vs  ju_xlat ô1;
+void main()
