@@ -726,3 +726,170 @@ void main()
         u_xlat4 = u_xlat11 * u_xlat6.xxxx + u_xlat4;
         u_xlat5 = u_xlat9 * u_xlat6.xxxx + u_xlat5;
     }
+    u_xlat2.xyz = u_xlat0.xyz;
+    u_xlat2.w = 1.0;
+    u_xlat6.x = dot(u_xlat3, u_xlat2);
+    u_xlat6.y = dot(u_xlat4, u_xlat2);
+    u_xlat6.z = dot(u_xlat5, u_xlat2);
+    u_xlat1.w = u_xlat0.w;
+    u_xlat6.w = dot(u_xlat3.yzx, u_xlat1.xyw);
+    u_xlat0.x = dot(u_xlat4.yzx, u_xlat1.xyw);
+    u_xlat0.y = dot(u_xlat5.yzx, u_xlat1.xyw);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(0 >> 2)] = floatBitsToUint(u_xlat6.x);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 1] = floatBitsToUint(u_xlat6.y);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 2] = floatBitsToUint(u_xlat6.z);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 3] = floatBitsToUint(u_xlat6.w);
+    u_xlat0.z = u_xlat1.z;
+    outVertices_buf[gl_GlobalInvocationID.x].value[(16 >> 2)] = floatBitsToUint(u_xlat0.x);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 1] = floatBitsToUint(u_xlat0.y);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 2] = floatBitsToUint(u_xlat0.z);
+    return;
+}
+      @            main               
+   inVertices          ÿÿÿÿÿÿÿÿ   inSkin         ÿÿÿÿÿÿÿÿ
+   inMatrices         ÿÿÿÿÿÿÿÿ      outVertices         ÿÿÿÿÿÿÿÿ×  #version 310 es
+
+#define HLSLCC_ENABLE_UNIFORM_BUFFERS 1
+#if HLSLCC_ENABLE_UNIFORM_BUFFERS
+#define UNITY_UNIFORM
+#else
+#define UNITY_UNIFORM uniform
+#endif
+#define UNITY_SUPPORTS_UNIFORM_LOCATION 1
+#if UNITY_SUPPORTS_UNIFORM_LOCATION
+#define UNITY_LOCATION(x) layout(location = x)
+#define UNITY_BINDING(x) layout(binding = x, std140)
+#else
+#define UNITY_LOCATION(x)
+#define UNITY_BINDING(x) layout(std140)
+#endif
+UNITY_BINDING(0) uniform CGlobals {
+	uint g_VertCount;
+};
+ struct inVertices_type {
+	uint[10] value;
+};
+
+layout(std430, binding = 1) readonly buffer inVertices {
+	inVertices_type inVertices_buf[];
+};
+ struct inSkin_type {
+	uint[1] value;
+};
+
+layout(std430, binding = 2) readonly buffer inSkin {
+	inSkin_type inSkin_buf[];
+};
+ struct inMatrices_type {
+	uint[16] value;
+};
+
+layout(std430, binding = 3) readonly buffer inMatrices {
+	inMatrices_type inMatrices_buf[];
+};
+ struct outVertices_type {
+	uint[10] value;
+};
+
+layout(std430, binding = 0) buffer outVertices {
+	outVertices_type outVertices_buf[];
+};
+vec4 u_xlat0;
+bool u_xlatb0;
+vec4 u_xlat1;
+vec4 u_xlat2;
+vec4 u_xlat3;
+uint u_xlatu3;
+vec4 u_xlat4;
+vec4 u_xlat5;
+vec4 u_xlat6;
+vec4 u_xlat7;
+uint u_xlatu7;
+vec3 u_xlat8;
+vec3 u_xlat9;
+vec4 u_xlat10;
+vec4 u_xlat11;
+vec4 u_xlat12;
+int u_xlati16;
+uint u_xlatu16;
+vec3 u_xlat20;
+uint u_xlatu29;
+int u_xlati42;
+uint u_xlatu42;
+bool u_xlatb42;
+layout(local_size_x = 64, local_size_y = 1, local_size_z = 1) in;
+void main()
+{
+    u_xlatb0 = gl_GlobalInvocationID.x>=g_VertCount;
+    if(u_xlatb0){
+        return;
+    }
+    u_xlat0 = vec4(uintBitsToFloat(inVertices_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 3]), uintBitsToFloat(inVertices_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 0]), uintBitsToFloat(inVertices_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 1]), uintBitsToFloat(inVertices_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 2]));
+    u_xlat1 = vec4(uintBitsToFloat(inVertices_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 0]), uintBitsToFloat(inVertices_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 1]), uintBitsToFloat(inVertices_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 2]), uintBitsToFloat(inVertices_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 3]));
+    u_xlat2.xy = vec2(uintBitsToFloat(inVertices_buf[gl_GlobalInvocationID.x].value[(32 >> 2) + 0]), uintBitsToFloat(inVertices_buf[gl_GlobalInvocationID.x].value[(32 >> 2) + 1]));
+    u_xlatu3 = inSkin_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 0];
+    u_xlati16 = int(gl_GlobalInvocationID.x) + 1;
+    u_xlatu16 = inSkin_buf[u_xlati16].value[(0 >> 2) + 0];
+    u_xlat4.x = float(0.0);
+    u_xlat4.y = float(0.0);
+    u_xlat4.z = float(0.0);
+    u_xlat4.w = float(0.0);
+    u_xlat5.x = float(0.0);
+    u_xlat5.y = float(0.0);
+    u_xlat5.z = float(0.0);
+    u_xlat5.w = float(0.0);
+    u_xlat6.x = float(0.0);
+    u_xlat6.y = float(0.0);
+    u_xlat6.z = float(0.0);
+    u_xlat6.w = float(0.0);
+    for(uint u_xlatu_loop_1 = u_xlatu3 ; u_xlatu_loop_1<u_xlatu16 ; u_xlatu_loop_1++)
+    {
+        u_xlatu42 = inSkin_buf[u_xlatu_loop_1].value[(0 >> 2) + 0];
+        u_xlatu7 = u_xlatu42 >> 16u;
+        u_xlat7.x = float(u_xlatu7);
+        u_xlat7.x = u_xlat7.x * 1.52590219e-05;
+        u_xlati42 = int(u_xlatu42 & 65535u);
+        u_xlat20.xyz = vec3(uintBitsToFloat(inMatrices_buf[u_xlati42].value[(0 >> 2) + 0]), uintBitsToFloat(inMatrices_buf[u_xlati42].value[(0 >> 2) + 1]), uintBitsToFloat(inMatrices_buf[u_xlati42].value[(0 >> 2) + 2]));
+        u_xlat8.xyz = vec3(uintBitsToFloat(inMatrices_buf[u_xlati42].value[(16 >> 2) + 0]), uintBitsToFloat(inMatrices_buf[u_xlati42].value[(16 >> 2) + 1]), uintBitsToFloat(inMatrices_buf[u_xlati42].value[(16 >> 2) + 2]));
+        u_xlat9.xyz = vec3(uintBitsToFloat(inMatrices_buf[u_xlati42].value[(32 >> 2) + 0]), uintBitsToFloat(inMatrices_buf[u_xlati42].value[(32 >> 2) + 1]), uintBitsToFloat(inMatrices_buf[u_xlati42].value[(32 >> 2) + 2]));
+        u_xlat10.xyw = vec3(uintBitsToFloat(inMatrices_buf[u_xlati42].value[(48 >> 2) + 0]), uintBitsToFloat(inMatrices_buf[u_xlati42].value[(48 >> 2) + 1]), uintBitsToFloat(inMatrices_buf[u_xlati42].value[(48 >> 2) + 2]));
+        u_xlat11.x = u_xlat20.x;
+        u_xlat11.y = u_xlat8.x;
+        u_xlat11.z = u_xlat9.x;
+        u_xlat11.w = u_xlat10.x;
+        u_xlat12.x = u_xlat20.y;
+        u_xlat12.y = u_xlat8.y;
+        u_xlat12.z = u_xlat9.y;
+        u_xlat12.w = u_xlat10.y;
+        u_xlat10.x = u_xlat20.z;
+        u_xlat10.y = u_xlat8.z;
+        u_xlat10.z = u_xlat9.z;
+        u_xlat4 = u_xlat11 * u_xlat7.xxxx + u_xlat4;
+        u_xlat5 = u_xlat12 * u_xlat7.xxxx + u_xlat5;
+        u_xlat6 = u_xlat10 * u_xlat7.xxxx + u_xlat6;
+    }
+    u_xlat3.xyz = u_xlat0.yzw;
+    u_xlat3.w = 1.0;
+    u_xlat7.x = dot(u_xlat4, u_xlat3);
+    u_xlat7.y = dot(u_xlat5, u_xlat3);
+    u_xlat7.z = dot(u_xlat6, u_xlat3);
+    u_xlat0.yz = u_xlat1.xy;
+    u_xlat7.w = dot(u_xlat4.xyz, u_xlat0.xyz);
+    u_xlat3.x = dot(u_xlat5.xyz, u_xlat0.xyz);
+    u_xlat3.y = dot(u_xlat6.xyz, u_xlat0.xyz);
+    u_xlat2.zw = u_xlat1.zw;
+    u_xlat3.z = dot(u_xlat4.zxy, u_xlat2.xzw);
+    u_xlat3.w = dot(u_xlat5.zxy, u_xlat2.xzw);
+    u_xlat2.x = dot(u_xlat6.zxy, u_xlat2.xzw);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(0 >> 2)] = floatBitsToUint(u_xlat7.x);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 1] = floatBitsToUint(u_xlat7.y);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 2] = floatBitsToUint(u_xlat7.z);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(0 >> 2) + 3] = floatBitsToUint(u_xlat7.w);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(16 >> 2)] = floatBitsToUint(u_xlat3.x);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 1] = floatBitsToUint(u_xlat3.y);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 2] = floatBitsToUint(u_xlat3.z);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(16 >> 2) + 3] = floatBitsToUint(u_xlat3.w);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(32 >> 2)] = floatBitsToUint(u_xlat2.x);
+    outVertices_buf[gl_GlobalInvocationID.x].value[(32 >> 2) + 1] = floatBitsToUint(u_xlat2.y);
+    return;
+}
