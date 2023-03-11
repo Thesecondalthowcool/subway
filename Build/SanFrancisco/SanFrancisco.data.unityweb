@@ -286,3 +286,129 @@ j U H ÿ 	vec4 hlslcc_mtx4x4unity_ObjectToWorld[4];3 MatrixVP.  ñ
 in highp  pin_POSIÃ 0  óCOLOR0;
 out medium %vs  ju_xlat ô1;
 void main()
+{
+   ) & =_ % *  " [ & =W 
+; ¶ .yyyy *A,1]G 3 J0] *m nxxxx +˜ Q 2Q OzzzzQ 
+ +[ 3ß 1= !/1= . 	^ 	1G 2G 	G sgl_Posi·K 	3K LwwwwK ¥return;
+}
+€*ŽFRAGMENT,Qpreci mfloat; 1int9€=0) P¯SV_Target05 ( =\ Ú 	$  ¨ð$Globals      ³$ L4 €      v #  , 8 4  ã
+¤ , @4 à , C   ðINGLE_PASS_STEREO$ /Þ	üÿÜ1­
+’ $0)Œ  Ui cStereo% {C
+¿¦ > â_P[8];9 !V9 %?Inv< &V¯  CameraPro›?ionB %?InvE )TL „ %Z? -3 q SSpaceOos[2w 8 ±ScaleOffset0 ¬'};žØ1ØEyeIndexÙ9int³ 1 ­ S
+L¥ 
+ )i1 2a
+ÿi!i1'/t(?h << 2)/ 2
+¢(k \+ 1)]P A @ °
+2T • /2)Ã
+2Ã
+^ /3)Ö
+2Ö
+ß$  Ø
+Ø
+Pü
+Ø
+
+@Ø
+   Œ
+
+=µ  @  
+   T @ ¬K  < D
+Ä  4 ( Ä 	
+Ä 0 V0  ü0 ~ d O  d Pd K  0 lh lb Ø N  ¨Y Ü 8 	R8 &€|¡ , 8R  ü ”0 | X „
+	 œ r
+à_INSTANCING_ON  /¸
+€
+
+a#exten ÿGL_AMD_vertex_shader_layer : require°
+ÿÿÿÿ 
+>AflatQ	; u
+`vs_BLE]DICES)
+u*
+u‹	8
+T
+3F
+CB.x =^
+(˜ þ(gl_InstanceID)),  _* 0.5M  Uract( C 
++ ' ŸroundEvenM uÔ /inm #i3ü# >u0)õ1J31J0™J,1n1J13,91631:31,' = Ls	)= Ç0çXÿÿªà
+	à
+“MULTIVIEWß
+/ ²à
+îOVR_multiview2×
+‡ÿÿÿÿä>iceÛ¶ 4 µ ì@num_~Ÿs = 2) inü%@¡î	v
+oWEIGHT¡
+Ùÿµ`ViewIDÑ)×ÿV†	
+Ú
+d/ =8	×
+?].x4ÿÿÿ¨¸N Ì0 p	% <„ 	@ Ì*+` 1ä\ 1`P                       Internal-Skinning                  main               
+   inVertices          ÿÿÿÿÿÿÿÿ   inSkin         ÿÿÿÿÿÿÿÿ
+   inMatrices         ÿÿÿÿÿÿÿÿ      outVertices         ÿÿÿÿÿÿÿÿP  #version 310 es
+
+#define HLSLCC_ENABLE_UNIFORM_BUFFERS 1
+#if HLSLCC_ENABLE_UNIFORM_BUFFERS
+#define UNITY_UNIFORM
+#else
+#define UNITY_UNIFORM uniform
+#endif
+#define UNITY_SUPPORTS_UNIFORM_LOCATION 1
+#if UNITY_SUPPORTS_UNIFORM_LOCATION
+#define UNITY_LOCATION(x) layout(location = x)
+#define UNITY_BINDING(x) layout(binding = x, std140)
+#else
+#define UNITY_LOCATION(x)
+#define UNITY_BINDING(x) layout(std140)
+#endif
+UNITY_BINDING(0) uniform CGlobals {
+	uint g_VertCount;
+};
+ struct inVertices_type {
+	uint[3] value;
+};
+
+layout(std430, binding = 1) readonly buffer inVertices {
+	inVertices_type inVertices_buf[];
+};
+ struct inSkin_type {
+	uint[1] value;
+};
+
+layout(std430, binding = 2) readonly buffer inSkin {
+	inSkin_type inSkin_buf[];
+};
+ struct inMatrices_type {
+	uint[16] value;
+};
+
+layout(std430, binding = 3) readonly buffer inMatrices {
+	inMatrices_type inMatrices_buf[];
+};
+ struct outVertices_type {
+	uint[3] value;
+};
+
+layout(std430, binding = 0) buffer outVertices {
+	outVertices_type outVertices_buf[];
+};
+vec4 u_xlat0;
+bool u_xlatb0;
+vec3 u_xlat1;
+uint u_xlatu1;
+vec4 u_xlat2;
+vec4 u_xlat3;
+vec4 u_xlat4;
+float u_xlat5;
+uint u_xlatu5;
+vec3 u_xlat6;
+vec3 u_xlat7;
+vec4 u_xlat8;
+vec4 u_xlat9;
+vec4 u_xlat10;
+int u_xlati12;
+uint u_xlatu12;
+vec3 u_xlat16;
+uint u_xlatu23;
+int u_xlati34;
+uint u_xlatu34;
+bool u_xlatb34;
+layout(local_size_x = 64, local_size_y = 1, local_size_z = 1) in;
+void main()
+{
